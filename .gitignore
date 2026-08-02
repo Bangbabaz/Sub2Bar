@@ -1,0 +1,18 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+artifacts/
+TestResults/
+*.nupkg
+
+# macOS and Xcode
+.DS_Store
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Local release entry point
+/scripts/package-and-release.ps1

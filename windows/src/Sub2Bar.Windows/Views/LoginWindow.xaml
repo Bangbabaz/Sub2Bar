@@ -1,0 +1,40 @@
+<Window x:Class="Sub2Bar.Windows.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Style="{StaticResource AppWindowStyle}"
+        Title="登录 Sub2Bar" Width="1100" Height="760" MinWidth="760" MinHeight="540"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource SurfaceBrush}" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton" Grid.Column="0" Style="{StaticResource IconButton}" Content="&#xE72B;"
+                    ToolTip="后退" Margin="8,8,3,8" Click="BackButton_Click" />
+            <Button x:Name="ForwardButton" Grid.Column="1" Style="{StaticResource IconButton}" Content="&#xE72A;"
+                    ToolTip="前进" Margin="3,8" Click="ForwardButton_Click" />
+            <Button Grid.Column="2" Style="{StaticResource IconButton}" Content="&#xE72C;"
+                    ToolTip="刷新" Margin="3,8" Click="ReloadButton_Click" />
+            <TextBlock Grid.Column="3" x:Name="SecurityGlyph" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets"
+                       Text="&#xE72E;" VerticalAlignment="Center" Margin="11,0,5,0" />
+            <TextBlock Grid.Column="4" x:Name="AddressText" VerticalAlignment="Center"
+                       TextTrimming="CharacterEllipsis" Foreground="{StaticResource MutedTextBrush}" />
+        </Grid>
+        <wv2:WebView2 x:Name="Browser" Grid.Row="1" />
+        <Border Grid.Row="2" Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}"
+                BorderThickness="0,1,0,0">
+            <TextBlock x:Name="StatusText" Text="正在准备登录页面" VerticalAlignment="Center"
+                       Margin="10,0" FontSize="12" Foreground="{StaticResource MutedTextBrush}" />
+        </Border>
+    </Grid>
+</Window>
