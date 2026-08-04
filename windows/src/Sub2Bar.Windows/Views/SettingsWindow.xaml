@@ -314,6 +314,8 @@
                             <RowDefinition Height="1" />
                             <RowDefinition Height="52" />
                             <RowDefinition Height="1" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="1" />
                             <RowDefinition Height="56" />
                         </Grid.RowDefinitions>
 
@@ -345,6 +347,19 @@
                                 Background="{StaticResource BorderBrush}" />
 
                         <Grid Grid.Row="4" Margin="14,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="始终置顶" Style="{StaticResource SettingsLabel}" />
+                            <CheckBox Grid.Column="1" Style="{StaticResource SwitchCheckBox}"
+                                      IsChecked="{Binding AlwaysOnTop}" />
+                        </Grid>
+
+                        <Border Grid.Row="5" Margin="14,0"
+                                Background="{StaticResource BorderBrush}" />
+
+                        <Grid Grid.Row="6" Margin="14,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -389,10 +404,10 @@
                             </Button>
                         </Grid>
 
-                        <Border Grid.Row="5" Margin="14,0"
+                        <Border Grid.Row="7" Margin="14,0"
                                 Background="{StaticResource BorderBrush}" />
 
-                        <Grid Grid.Row="6" Margin="14,0">
+                        <Grid Grid.Row="8" Margin="14,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="200" />

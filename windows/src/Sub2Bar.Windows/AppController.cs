@@ -187,6 +187,7 @@ public sealed class AppController : IDisposable
             _refreshTimer.Start();
         }
         _floatingWindow?.SetPinnedOpacity(_viewModel.Settings.PinnedOpacityPercent);
+        _floatingWindow?.SetAlwaysOnTop(_viewModel.Settings.AlwaysOnTop);
         _floatingWindow?.SetMinimalMode(_viewModel.Settings.MinimalMode);
         (_settingsWindow?.DataContext as SettingsViewModel)?.UpdateFrom(_viewModel.Settings);
     }

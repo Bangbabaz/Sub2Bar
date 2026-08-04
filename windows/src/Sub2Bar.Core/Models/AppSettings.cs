@@ -14,6 +14,7 @@ public sealed record AppSettings
     public QuotaDisplayMode DisplayMode { get; init; } = QuotaDisplayMode.RemainingAmount;
     public IReadOnlyList<long> DisplayedAdminAccountIds { get; init; } = [];
     public bool LaunchAtLogin { get; init; }
+    public bool AlwaysOnTop { get; init; } = true;
     public bool MinimalMode { get; init; }
     public int PinnedOpacityPercent { get; init; } = 30;
 

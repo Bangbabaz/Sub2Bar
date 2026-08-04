@@ -18,6 +18,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty] private int _refreshIntervalMinutes;
     [ObservableProperty] private QuotaDisplayMode _displayMode;
     [ObservableProperty] private bool _launchAtLogin;
+    [ObservableProperty] private bool _alwaysOnTop;
     [ObservableProperty] private bool _minimalMode;
     [ObservableProperty] private int _pinnedOpacityPercent;
     [ObservableProperty] private string? _validationMessage;
@@ -32,6 +33,7 @@ public sealed partial class SettingsViewModel : ObservableObject
         _refreshIntervalMinutes = settings.RefreshIntervalMinutes;
         _displayMode = settings.DisplayMode;
         _launchAtLogin = settings.LaunchAtLogin;
+        _alwaysOnTop = settings.AlwaysOnTop;
         _minimalMode = settings.MinimalMode;
         _pinnedOpacityPercent = settings.PinnedOpacityPercent;
         ConnectionStatus = connectionStatus;
@@ -63,6 +65,7 @@ public sealed partial class SettingsViewModel : ObservableObject
             RefreshIntervalMinutes = settings.RefreshIntervalMinutes;
             DisplayMode = settings.DisplayMode;
             LaunchAtLogin = settings.LaunchAtLogin;
+            AlwaysOnTop = settings.AlwaysOnTop;
             MinimalMode = settings.MinimalMode;
             PinnedOpacityPercent = settings.PinnedOpacityPercent;
             _displayedAdminAccountIds = settings.DisplayedAdminAccountIds.ToArray();
@@ -77,6 +80,7 @@ public sealed partial class SettingsViewModel : ObservableObject
     partial void OnRefreshIntervalMinutesChanged(int value) => QueueApply();
     partial void OnDisplayModeChanged(QuotaDisplayMode value) => QueueApply();
     partial void OnLaunchAtLoginChanged(bool value) => QueueApply();
+    partial void OnAlwaysOnTopChanged(bool value) => QueueApply();
     partial void OnMinimalModeChanged(bool value) => QueueApply();
     partial void OnPinnedOpacityPercentChanged(int value) => QueueApply();
 
@@ -109,6 +113,7 @@ public sealed partial class SettingsViewModel : ObservableObject
                 RefreshIntervalMinutes = RefreshIntervalMinutes,
                 DisplayMode = DisplayMode,
                 LaunchAtLogin = LaunchAtLogin,
+                AlwaysOnTop = AlwaysOnTop,
                 MinimalMode = MinimalMode,
                 PinnedOpacityPercent = PinnedOpacityPercent,
                 DisplayedAdminAccountIds = _displayedAdminAccountIds

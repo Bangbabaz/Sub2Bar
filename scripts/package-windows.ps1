@@ -58,6 +58,7 @@ dotnet publish $project `
     -p:AssemblyVersion=$assemblyVersion `
     -p:FileVersion=$assemblyVersion `
     -p:InformationalVersion=$Version `
+    -p:IncludeSourceRevisionInInformationalVersion=false `
     -p:PublishSingleFile=false `
     -p:DebugType=none `
     -p:DebugSymbols=false

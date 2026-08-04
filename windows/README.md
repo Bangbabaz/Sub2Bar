@@ -35,7 +35,7 @@ dotnet run --project src/Sub2Bar.Windows/Sub2Bar.Windows.csproj
 安装 Inno Setup 6 后执行：
 
 ```powershell
-..\scripts\package-windows.ps1 -Version 0.1.0
+..\scripts\package-windows.ps1 -Version 0.1.1
 ```
 
 发布目录为 `artifacts/publish`，安装包输出到 `artifacts`。安装范围为当前用户，默认目录是 `%LocalAppData%\Programs\Sub2Bar`，不需要管理员权限。

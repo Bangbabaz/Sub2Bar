@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Sub2Bar.Core.Models;
 using Xunit;
 
@@ -11,8 +12,19 @@ public sealed class AppSettingsTests
         var settings = new AppSettings();
 
         Assert.Equal(30, settings.PinnedOpacityPercent);
+        Assert.True(settings.AlwaysOnTop);
         Assert.False(settings.MinimalMode);
         Assert.Equal(QuotaDisplayMode.RemainingAmount, settings.DisplayMode);
+    }
+
+    [Fact]
+    public void AlwaysOnTop_DefaultsToEnabledWhenMissingFromStoredSettings()
+    {
+        var settings = JsonSerializer.Deserialize<AppSettings>("{\"launchAtLogin\":false}",
+            new JsonSerializerOptions(JsonSerializerDefaults.Web));
+
+        Assert.NotNull(settings);
+        Assert.True(settings.AlwaysOnTop);
     }
 
     [Theory]

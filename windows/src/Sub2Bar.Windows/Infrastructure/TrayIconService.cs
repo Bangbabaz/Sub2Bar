@@ -39,7 +39,6 @@ public sealed class TrayIconService : IDisposable
         menu.Items.Add(MenuItem("立即刷新", () => _ = _viewModel.RefreshAsync()));
         menu.Items.Add(MenuItem("打开控制台", () => _viewModel.OpenConsoleCommand.Execute(null)));
         menu.Items.Add(MenuItem("设置", () => _viewModel.OpenSettingsCommand.Execute(null)));
-        menu.Items.Add(new Separator());
         menu.Items.Add(MenuItem("退出", () => _viewModel.ExitCommand.Execute(null)));
         return menu;
     }

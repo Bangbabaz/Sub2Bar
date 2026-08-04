@@ -64,6 +64,8 @@ public partial class FloatingWindow : Window
         }
     }
 
+    public void SetAlwaysOnTop(bool enabled) => Topmost = enabled;
+
     public void SetMinimalMode(bool enabled)
     {
         _updatingMinimalModeButton = true;
